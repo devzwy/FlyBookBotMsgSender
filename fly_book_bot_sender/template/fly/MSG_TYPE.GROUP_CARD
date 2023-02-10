@@ -1,0 +1,6 @@
+{
+    "msg_type": "share_chat",
+    "content":{
+        "share_chat_id": "${chat_id}"
+    }
+}

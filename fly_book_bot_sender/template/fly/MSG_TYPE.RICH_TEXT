@@ -1,0 +1,15 @@
+{
+	"msg_type": "post",
+	"content": {
+		"post": {
+			"zh_cn": {
+				"title": "${title}",
+				"content": [
+					[
+					${rich_content}
+					]
+				]
+			}
+		}
+	}
+}

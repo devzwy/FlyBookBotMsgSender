@@ -1,0 +1,32 @@
+{
+    "msg_type": "interactive",
+    "card": {
+        "elements": [{
+                "tag": "div",
+                "text": {
+                        "content": "测试内容",
+                        "tag": "lark_md"
+                }
+        }, {
+                "actions": [
+                {
+    "tag": "button",
+    "text": {
+        "content": "测试",
+        "tag": "lark_md"
+    },
+    "url": "111",
+    "type": "default",
+    "value": {}
+},
+                ],
+                "tag": "action"
+        }],
+        "header": {
+                "title": {
+                        "content": "卡片",
+                        "tag": "plain_text"
+                }
+        }
+    }
+}

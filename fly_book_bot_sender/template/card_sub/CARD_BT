@@ -1,0 +1,10 @@
+{
+    "tag": "button",
+    "text": {
+        "content": "${bt_title}",
+        "tag": "lark_md"
+    },
+    "url": "${href}",
+    "type": "default",
+    "value": {}
+}

@@ -1,0 +1,23 @@
+{
+    "msg_type": "interactive",
+    "card": {
+        "elements": [{
+                "tag": "div",
+                "text": {
+                        "content": "${content}",
+                        "tag": "lark_md"
+                }
+        }, {
+                "actions": [
+                ${bts}
+                ],
+                "tag": "action"
+        }],
+        "header": {
+                "title": {
+                        "content": "${title}",
+                        "tag": "plain_text"
+                }
+        }
+    }
+}

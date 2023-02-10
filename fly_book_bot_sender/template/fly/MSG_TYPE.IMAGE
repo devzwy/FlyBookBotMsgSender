@@ -1,0 +1,6 @@
+{
+    "msg_type":"image",
+    "content":{
+        "image_key": "${image_key}"
+    }
+}

@@ -1,0 +1,6 @@
+{
+	"tag": "${tag}",
+	"text": "${text}",
+	"href": "${href}",
+	"user_id": "${user_id}"
+}
