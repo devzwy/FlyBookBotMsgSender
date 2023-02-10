@@ -62,19 +62,19 @@ sender.sendChatMsg(msgType=MSG_TYPE.RICH_TEXT,
 ![img_7.png](img_7.png)  
 
 ```
-    sender.sendChatMsg(msgType=MSG_TYPE.GROUP_CARD, content='oc_f5b1a7eb27ae2c7b6adc2a74faf339ff')
+sender.sendChatMsg(msgType=MSG_TYPE.GROUP_CARD, content='oc_f5b1a7eb27ae2c7b6adc2a74faf339ff')
 ```
 
 ### 图片消息  
 ![img_8.png](img_8.png)  
 
 ```
-    # 获得token
-    t = sender.getToken(app_id=APP_ID, app_secret=APP_SECRET)
-    # 获得图片id
-    ik = sender.uploadImage('test.png', t)
-    # 发送图片消息
-    sender.sendChatMsg(msgType=MSG_TYPE.IMAGE, content=ik)
+# 获得token
+t = sender.getToken(app_id=APP_ID, app_secret=APP_SECRET)
+# 获得图片id
+ik = sender.uploadImage('test.png', t)
+# 发送图片消息
+sender.sendChatMsg(msgType=MSG_TYPE.IMAGE, content=ik)
 ```
 
 ### 卡片消息1
@@ -85,7 +85,7 @@ sender.sendChatMsg(msgType=MSG_TYPE.CARD, title='卡片消息', content='这是�
 
 ### 卡片消息2
 ```
-    sender.sendChatMsg(msgType=sender.MSG_TYPE.CARD,
+sender.sendChatMsg(msgType=sender.MSG_TYPE.CARD,
                        title='卡片消息',
                        content='<at id=all>全部成员</at><at id=uid_zhangsan>张三</at> \\n这是一条带业务按钮的卡片消息！我支持md语法！\\n<a href=\'http://www.baidu.com\'>这也时一个跳转链接</a>\\n这条消息特别重要！\\n![小黄](img_v2_42baabc5-df87-46bf-83d5-7b26a101372g)\\n这是一个链接[aaa](http://www.baidu.com)\\n ---\\n告辞',
                        bottons=[
