@@ -185,7 +185,6 @@ def uploadImage(path, token):
         if response.status_code == 200:
             result = json.loads(response.text)
             if result.get('code') == 0:
-                print('图片上传成功')
                 return result.get('data')['image_key']
     except:
         print('图片上传失败')
@@ -223,4 +222,4 @@ def sendChatMsg(msgType: MSG_TYPE, title: str = None, content=None, bottons: lis
             else:
                 return [False, result.get('msg')]
         else:
-            return [False, '发送异常']
+            return [False, '发送异常'+resp.text]

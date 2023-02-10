@@ -1,13 +1,13 @@
 {
     "msg_type": "interactive",
     "card": {
+        "config": {
+			"wide_screen_mode": true
+		},
         "elements": [{
-                "tag": "div",
-                "text": {
-                        "content": "${content}",
-                        "tag": "lark_md"
-                }
-        }, {
+			"tag": "markdown",
+			"content": "${content}"
+		}, {
                 "actions": [
                 ${bts}
                 ],
@@ -17,7 +17,8 @@
                 "title": {
                         "content": "${title}",
                         "tag": "plain_text"
-                }
+                },
+                "template": "blue"
         }
     }
 }
