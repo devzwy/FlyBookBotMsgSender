@@ -100,14 +100,19 @@ sender.sendChatMsg(msgType=sender.MSG_TYPE.GROUP_CARD, content='oc_f5b1a7eb27ae2
 ```
 
 ## 效果预览
+> 顺序对应以上类型  
+
 
 ### PC
 
 ![img_1.png](img_1.png)  
+
 ![img_2.png](img_2.png)
 
 ### 手机
+![img_3.png](img_3.png)  
 
+![img_4.png](img_4.png)
 ## 附
 
 > sendChatMsg 函数回传一个长度=2的数组，第0位是bool值，代表发送的状态，第1位为str值，发送失败时返回原因，成功时返回定值：success
