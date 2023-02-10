@@ -6,8 +6,6 @@ from string import Template
 import requests as req
 from requests_toolbelt import MultipartEncoder
 
-__TEMPLATE_PATH = "template/%s"
-
 
 class MSG_TYPE(Enum):
     """
@@ -35,10 +33,7 @@ def __readTxt(subPath):
     读取模版文件
     """
 
-    path = os.path.abspath(os.path.join(os.getcwd(), "template"))
-    print('当前目录:' + path)
-
-    f = open(path + '/%s' % subPath)
+    f = open(os.path.abspath(os.path.join(os.getcwd(), "template")) + '/%s' % subPath)
     content = f.read()
     f.close()
     return content
@@ -135,20 +130,22 @@ def __buildMsg(msgType: MSG_TYPE, title: str = None, content=None, bottons: list
             title = '卡片消息'
         if content is None:
             content = ""
-
-        bts = ''
         if not bottons is None and len(bottons) > 0:
             if __checkBts(bottons):
+                bts = ''
                 subMod = __readTxt('card_sub/CARD_BT')
                 for item in bottons:
                     if item.get('href') is None:
                         item['href'] = ''
                     bts += Template(subMod).safe_substitute(item) + ','
+
                 if bts.endswith(','):
                     bts = bts[:len(bts) - 1]
                 return Template(fly_mod).safe_substitute({'content': content, 'title': title, 'bts': bts})
             else:
                 return None
+        else:
+            return Template(fly_mod).safe_substitute({'content': content, 'title': title, 'bts': ''})
     elif msgType == MSG_TYPE.GROUP_CARD:
         return Template(fly_mod).safe_substitute({'chat_id': content})
     elif msgType == MSG_TYPE.IMAGE:
@@ -158,9 +155,6 @@ def __buildMsg(msgType: MSG_TYPE, title: str = None, content=None, bottons: list
 
 def getToken(app_id, app_secret):
     url = 'https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal'
-    headers = {
-        "Content-Type": "application/json; charset=utf-8"
-    }
 
     try:
         resp = req.post(url=url, data=json.dumps({
